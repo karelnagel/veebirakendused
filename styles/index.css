@@ -1,0 +1,40 @@
+body {
+    background: blue;
+    height: 100%;
+    width: 100%;
+    padding-top: 200px;
+}
+
+.login-box {
+    margin: auto;
+    width: 350px;
+    background: white;
+    padding: 30px 20px;
+    display: block;
+}
+
+.login-contents {
+    text-align: center;
+}
+
+input, button, p {
+    margin: 5px 0;
+}
+
+a {
+    color: blue;
+}
+
+button a {
+    color: white;
+}
+
+#note-image {
+    position: fixed;
+    width: 70px;
+}
+
+button {
+    background: blue;
+    padding: 5px 20px;
+}
