@@ -17,6 +17,83 @@ body {
     text-align: center;
 }
 
+.head {
+  display: flex;
+  flex-direction: row;
+  background:whitesmoke;
+  height: 50px;
+  width: 100%;
+}
+
+.head > div {
+    margin-left: auto;
+    margin-right: 95%;
+    padding-top: 4px;
+}
+
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container > div {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-item {
+  background:whitesmoke;
+  padding: 5px;
+  margin-top: 10px;
+  color:black;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+
+}
+
+.post_heading {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: normal;
+    color: gray;
+    align-items: center;
+    padding-bottom: 2%;
+}
+
+.user {
+    background: url(https://toppng.com/uploads/preview/user-account-management-logo-user-icon-11562867145a56rus2zwu.png) no-repeat;
+    background-size: contain;
+    border: none;
+    width: 80px;
+    height: 50px;
+    alt: "user";
+}
+
+#date {
+    padding-left: 70%;
+}
+
+#post {
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+    color:black;
+}
+
+#like{
+    background: url(https://e7.pngegg.com/pngimages/886/3/png-clipart-white-and-blue-like-icon-facebook-like-button-computer-icons-thumb-signal-thumbs-up-blue-text.png) no-repeat;
+    background-size:contain;
+    width: 60px;
+    height: 50px;
+    cursor:pointer;
+    align-items: center;
+    border: none;
+}
+
 input, button, p {
     margin: 5px 0;
 }
@@ -39,3 +116,8 @@ button {
     background: blue;
     padding: 5px 20px;
 }
+
+::selection {
+    color: rgb(255, 255, 255);
+    background: rgb(6, 18, 126);
+  }
