@@ -145,13 +145,7 @@ button {
 button:hover {
     background-color: #e7e7e7;
 }
-/*
-button {
-    background: lightgray;
-    padding: 5px 20px;
-}
 
- */
 
 ::selection {
     color: rgb(255, 255, 255);
