@@ -13,42 +13,53 @@
     <link rel="stylesheet" href="styles/index.css">
 
 </head>
+
 <body>
     <div class="head">
-        <div><img id="note-image" src="images/note.png" alt="note" width="20" ></div>
-        
+        <div><img id="smaller-note-image" src="images/note.png" alt="note"></div>
+        <form>
+            <input type="text" class="search" >
+            <input type="submit" value="Search" class="search" id="search">
+        </form>
         <div><img id="user-image" src="images/me.png" alt="user" width="40" display="block"></div>
     </div>
-<div class="flex-container">
 
-<div class="flex-item">
-    <div class="post_heading"> 
-        <iframe class="user"></iframe>
-        <div id="date">19.09.2021 19:22</div> 
-    </div>
-    <img id="rain" src="images/rain.jpg" alt="rain" width="100%">
-    <div id='post'>I think it's going to rain.</div>
-    <button id="like"></button>
-</div>
+    <div class="flex-container">
 
-<div class="flex-item">
-    <div class="post_heading"> 
-        <iframe class="user"></iframe>
-        <div id="date">19.09.2022 19:22</div> 
-    </div>
-    <div id='post'>Which weights more, a pound of feathers or a pound of bricks?</div>
-    <button id="like"></button>
-</div>
+        <div class="flex-item">
+            <div class="post_heading"> 
+                <iframe class="user"></iframe>
+                <div id="date">19.09.2021 19:22</div> 
+            </div>
+            <div id='post'>
+                <img id="rain" src="images/rain.jpg" alt="rain" width="100%">
+                <p>I think it's going to rain.</p>
+            </div>
+            <button id="like"></button>
+        </div>
 
-<div class="flex-item">
-    <div class="post_heading"> 
-        <iframe class="user"></iframe>
-        <div id="date">20.09.2021 20:22</div> 
+        <div class="flex-item">
+            <div class="post_heading"> 
+                <iframe class="user"></iframe>
+                <div id="date">19.09.2022 19:22</div> 
+            </div>
+            <div id='post'>
+                <p>Which weights more, a pound of feathers or a pound of bricks?</p>
+            </div>
+            <button id="like"></button>
+        </div>
+
+        <div class="flex-item">
+            <div class="post_heading"> 
+                <iframe class="user"></iframe>
+                <div id="date">20.09.2021 20:22</div> 
+            </div>
+            <div id='post'>
+                <img id="batman" src="images/batman.png" alt="batman" width="100%">
+                <p>Felt cute, might delete later.</p>
+            </div>
+            <button id="like"></button>
+        </div>
     </div>
-    <img id="batman" src="images/batman.png" alt="batman" width="100%">
-    <div id='post'>Felt cute, might delete later.</div>
-    <button id="like"></button>
-</div>
-</div>
 </body>
 </html>
