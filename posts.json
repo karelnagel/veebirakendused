@@ -1,0 +1,71 @@
+{
+   "posts":[
+      {
+         "create time":"19.09.2021 19:22",
+         "Autor name":"Mati",
+         "post content":"I think it's going to rain.",
+         "image":"images/rain.jpg"
+      },
+      {
+         "create time":"20.09.2021 09:36",
+         "Autor name":"Kati",
+         "post content":"Which weights more, a pound of feathers or a pound of bricks?",
+         "image":null
+      },
+      {
+         "create time":"30.09.2021 20:40",
+         "Autor name":"Batman",
+         "Autor picture":null,
+         "post content":"Felt cute, might delete later.",
+         "image":"images/batman.jpg"
+      },
+      {
+         "create time":"1.10.2021 08:36",
+         "Autor name":"Kati",
+         "post content":"There will come a time when you believe everything is finished. That will be the beginning. - Louis L’Amour",
+         "image":null
+      },
+      {
+         "create time":"2.10.2021 09:13",
+         "Autor name":"Mati",
+         "post content":"What is something you predict will exist in 10 years that doesn't today?",
+         "image":null
+      },
+      {
+         "create time":"2.10.2021 15:33",
+         "Autor name":"Toomas",
+         "post content":"I will always woof you.",
+         "image":"images/dog.png"
+      },
+      {
+         "create time":"4.10.2021 22:10",
+         "Autor name":"Mari",
+         "post content":"Did you know that the world's oldest hotel has been operating since 705 A.D.",
+         "image":null
+      },
+      {
+         "create time":"9.10.2021 12:45",
+         "Autor name":"Kati",
+         "post content":"The most effective form of learning is practice, not planning. - James Clear",
+         "image":null
+      },
+      {
+         "create time":"14.10.2021 08:36",
+         "Autor name":"Toomas",
+         "post content":"Good morning, everybody!",
+         "image":null
+      },
+      {
+         "create time":"15.10.2021 23:48",
+         "Autor name":"Kati",
+         "post content":"Every prophet has to come from civilization, but every prophet has to go into the wilderness. He must have a strong impression of a complex society and all that it has to give, and then he must serve periods of isolation and meditation. This is the process by which psychic dynamite is made. - Winston Churchill",
+         "image":null
+      },
+      {
+         "create time":"20.10.2021 04:04",
+         "Autor name":"Mati",
+         "post content":"What's your story about breaking the law?",
+         "image":null
+      }
+   ]
+}
