@@ -22,20 +22,29 @@
         <input type="text" class="search" />
         <input type="submit" value="Search" class="search" id="search" />
       </form>
-      <div>
-        <img
-          id="user-image"
-          src="images/me.png"
-          alt="user"
-          width="40"
-          display="block"
-        />
+      <div class="dropdown">
+        <button class="dropdownButton" onclick="showInfo()">
+          <img
+            id="user-image"
+            src="images/me.png"
+            alt="user"
+            height="40"
+            display="block"
+          />
+        </button>
+      <div class="dropdown-content" id="dropdownInfo">
+        <b>John Doe</b>
+        <b>john.doe@example.com</b>
+      </div>
       </div>
     </div>
 
     <div class="flex-container"></div>
   </body>
   <script>
+    function showInfo(){
+      document.getElementById("dropdownInfo").classList.toggle("show")
+    }
     $(function () {
       $.get(
         "https://api.jsonbin.io/b/617589c89548541c29c7e082",
@@ -63,6 +72,7 @@
           }
         }
       );
+
     });
   </script>
 </html>
