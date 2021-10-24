@@ -1,65 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PostIt</title>
-    <meta name="description" content="Welcome to postit!">
+    <meta name="description" content="Welcome to postit!" />
 
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
 
-    <link rel="stylesheet" href="styles/index.css">
-
-</head>
-
-<body>
+  <body>
     <div class="head">
-        <div><img id="smaller-note-image" src="images/note.png" alt="note"></div>
-        <form>
-            <input type="text" class="search" >
-            <input type="submit" value="Search" class="search" id="search">
-        </form>
-        <div><img id="user-image" src="images/me.png" alt="user" width="40" display="block"></div>
+      <div>
+        <img id="smaller-note-image" src="images/note.png" alt="note" />
+      </div>
+      <form>
+        <input type="text" class="search" />
+        <input type="submit" value="Search" class="search" id="search" />
+      </form>
+      <div>
+        <img
+          id="user-image"
+          src="images/me.png"
+          alt="user"
+          width="40"
+          display="block"
+        />
+      </div>
     </div>
 
-    <div class="flex-container">
+    <div class="flex-container"></div>
+  </body>
+  <script>
+    $(function () {
+      $.get(
+        "https://api.jsonbin.io/b/617589c89548541c29c7e082",
+        function (json_obj) {
+          for (postData of json_obj.posts) {
+            let postHeading = $('<div class="post_heading">');
+            postHeading.append($('<iframe class="user"></iframe>'));
+            postHeading.append($('<p id="date">').text(postData.time));
 
-        <div class="flex-item">
-            <div class="post_heading"> 
-                <iframe class="user"></iframe>
-                <div id="date">19.09.2021 19:22</div> 
-            </div>
-            <div id='post'>
-                <img id="rain" src="images/rain.jpg" alt="rain" width="100%">
-                <p>I think it's going to rain.</p>
-            </div>
-            <button id="like"></button>
-        </div>
+            let post = $('<div id="post">');
+            if (postData.image)
+              post.append(
+                $(
+                  `<img id="image" src="${postData.image}" alt="image" width="100%" />`
+                )
+              );
+            post.append($("<p>").text(postData.content));
 
-        <div class="flex-item">
-            <div class="post_heading"> 
-                <iframe class="user"></iframe>
-                <div id="date">19.09.2022 19:22</div> 
-            </div>
-            <div id='post'>
-                <p>Which weights more, a pound of feathers or a pound of bricks?</p>
-            </div>
-            <button id="like"></button>
-        </div>
+            let div = $('<div class="flex-item">');
+            div.append(postHeading);
+            div.append(post);
+            div.append($('<button id="like"></button>'));
 
-        <div class="flex-item">
-            <div class="post_heading"> 
-                <iframe class="user"></iframe>
-                <div id="date">20.09.2021 20:22</div> 
-            </div>
-            <div id='post'>
-                <img id="batman" src="images/batman.png" alt="batman" width="100%">
-                <p>Felt cute, might delete later.</p>
-            </div>
-            <button id="like"></button>
-        </div>
-    </div>
-</body>
+            $(".flex-container").append(div);
+          }
+        }
+      );
+    });
+  </script>
 </html>
