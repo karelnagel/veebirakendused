@@ -1,66 +1,79 @@
 <template>
-  <p>Home</p>
+  <div class="flex-container" v-for="(post, index) in posts" :key="index">
+    <div class="flex-item">
+      <div class="post-heading">
+        <p id="" date>{{ post.time }}</p>
+        <iframe class="user"></iframe>
+      </div>
+      <div class="post">
+        <img v-if="post.image" v-bind:src="post.image" alt="image" class="post-image">
+        <p>{{ post.content }}</p>
+      </div>
+      <div class="like-div">
+        <p class="like-count">{{ likes[index] ?? '0' }}</p>
+        <button id="like" v-on:click="increment(index)"></button>
+      </div>
+    </div>
+  </div>
+  <button class="initialize-likes" v-on:click="initializeLikes()">Set likes to 0</button>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Home",
-
+  data() {
+    return {
+      posts: [],
+      likes: this.$store.state.likes
+    }
+  },
+  mounted() {
+    axios.get("https://api.jsonbin.io/b/617589c89548541c29c7e082")
+        .then((response) => {
+          this.posts = response.data.posts
+        })
+  },
+  methods: {
+    increment(id) {
+      console.log("asdasdasd", id, this.$store.state.likes)
+      if (!this.likes[id]) this.likes[id] = 0
+      this.likes[id]++
+      this.$store.state.likes[id] = this.likes[id]
+    },
+    initializeLikes() {
+      this.likes = []
+      this.$store.state.likes = []
+    }
+  }
 };
 </script>
 
 <style>
+.post-heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.initialize-likes {
+  display: flex;
+  margin: 10px auto;
+}
+
+.like-div {
+  display: inline-flex;
+}
+
+.post-image {
+  width: 100%;
+}
+
 body {
   background: cornflowerblue;
   height: 100%;
   width: 100%;
-}
-
-.login-box {
-  position: relative;
-  margin: 200px auto;
-  width: 350px;
-  background: white;
-  padding: 30px 20px;
-  display: block;
-}
-
-.login-contents {
-  text-align: center;
-}
-
-.head {
-  display: flex;
-  flex-direction: row;
-  background: whitesmoke;
-  height: 50px;
-  width: 100%;
-}
-
-.head > div {
-  margin-left: 1%;
-  margin-right: 1%;
-  padding-top: 4px;
-}
-
-div + form {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.search {
-  font-size: 115%;
-}
-
-#search {
-  background-color: darkblue;
-  color: whitesmoke;
-  margin-top: 4%;
-}
-
-head ~ .flex-container {
-  display: flex;
-  flex-direction: column;
 }
 
 .flex-container > div {
@@ -77,7 +90,6 @@ head ~ .flex-container {
   font-weight: bold;
   font-size: 3em;
   text-align: center;
-
 }
 
 .post_heading {
