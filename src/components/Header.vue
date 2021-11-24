@@ -3,11 +3,11 @@
     <div class="dropdown">
       <button class="dropdownButton" onclick="showInfo()">
         <img
-            id="user-image"
-            src="images/me.png"
-            alt="user"
-            height="40"
-            display="block"
+          id="user-image"
+          src="images/me.png"
+          alt="user"
+          height="40"
+          display="block"
         />
       </button>
       <div class="dropdown-content" id="dropdownInfo">
@@ -15,10 +15,16 @@
         <b>john.doe@example.com</b>
       </div>
     </div>
-      <div class="navbar">
-          <router-link class="nav-item nav-link" active-class="active" to="/">Home</router-link>
-          <router-link class="nav-item nav-link" active-class="active" to="/contact">Contact</router-link>
-          <router-link class="nav-item nav-link" active-class="active" to="/login">Login</router-link>
+    <div class="navbar">
+      <router-link class="nav-item nav-link" active-class="active" to="/"
+        >Home</router-link
+      >
+      <router-link class="nav-item nav-link" active-class="active" to="/contact"
+        >Contact</router-link
+      >
+      <router-link class="nav-item nav-link" active-class="active" to="/login"
+        >Login</router-link
+      >
     </div>
   </div>
 </template>
@@ -26,7 +32,7 @@
 .header {
   display: flex;
   flex-direction: row;
-  background:whitesmoke;
+  background: whitesmoke;
   width: 99%;
 }
 
@@ -47,13 +53,12 @@ div + form {
   cursor: pointer;
   position: relative;
   height: 50px;
-
 }
 .dropdown-content {
   display: none;
   position: absolute;
-  left:auto;
-  right:0%;
+  left: auto;
+  right: 0%;
   border-radius: 7px;
   border: 5px;
   background-color: whitesmoke;
@@ -68,12 +73,12 @@ div + form {
   border-radius: 7px;
   border: 5px;
 }
-.dropdown-content b:hover{
+.dropdown-content b:hover {
   background-color: lightgray;
   color: dimgray;
 }
 
-.navbar{
+.navbar {
   overflow: hidden;
 }
 .nav-item {
@@ -86,13 +91,11 @@ div + form {
   font-size: 18px;
   padding-bottom: 11%;
 }
-.nav-item:hover{
+.nav-item:hover {
   background-color: lightblue;
-  color:darkslategrey;
+  color: darkslategrey;
   text-decoration: none;
 }
-.nav-item{
-
+.nav-item {
 }
-
 </style>

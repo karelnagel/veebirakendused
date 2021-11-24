@@ -1,28 +1,33 @@
 <template>
   <div>
     <div class="login-box">
-      <img id="note-image" src="src/assets/images/note.png" alt="note"/>
+      <img src="@/assets/note.png" id=note-image />
       <div class="login-contents">
         <h3>Welcome to PostIt!</h3>
-        <a id="hover" href="/login"
-        >Create an account</a
-        >
+        <router-link active-class="active" to="/contact">Create an account</router-link>
         <p>or</p>
         <p>Enter your email and password</p>
         <input type="email" placeholder="Email"/>
         <br/>
         <input type="password" placeholder="Password"/>
         <br/>
-        <button>
-          <a href="/"> Log in </a>
-        </button>
+        <button v-on:click="toHomePage()">Log in</button>
         <br/>
-        <a href="/">Forgot password?</a>
+        <router-link active-class="active" to="/contact">Forgot password?</router-link>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  methods:{
+    toHomePage(){
+      this.$router.push('/');
+    }
+  }
+}
+</script>
 
 <style>
 body {
@@ -152,6 +157,7 @@ a:hover{
   text-decoration: underline;
   overflow: hidden;
 }
+
 #note-image {
   position: absolute;
   width: 70px;
@@ -173,7 +179,7 @@ button:hover {
   background-color: #e7e7e7;
 }
 
-
+  	
 ::selection {
   color: rgb(255, 255, 255);
   background: rgb(6, 18, 126);

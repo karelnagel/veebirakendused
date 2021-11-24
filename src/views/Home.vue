@@ -6,16 +6,23 @@
         <iframe class="user"></iframe>
       </div>
       <div class="post">
-        <img v-if="post.image" v-bind:src="post.image" alt="image" class="post-image">
+        <img
+          v-if="post.image"
+          v-bind:src="post.image"
+          alt="image"
+          class="post-image"
+        />
         <p>{{ post.content }}</p>
       </div>
       <div class="like-div">
-        <p class="like-count">{{ likes[index] ?? '0' }}</p>
+        <p class="like-count">{{ likes[index] ?? "0" }}</p>
         <button id="like" v-on:click="increment(index)"></button>
       </div>
     </div>
   </div>
-  <button class="initialize-likes" v-on:click="initializeLikes()">Set likes to 0</button>
+  <button class="initialize-likes" v-on:click="initializeLikes()">
+    Set likes to 0
+  </button>
 </template>
 
 <script>
@@ -26,27 +33,28 @@ export default {
   data() {
     return {
       posts: [],
-      likes: this.$store.state.likes
-    }
+      likes: this.$store.state.likes,
+    };
   },
   mounted() {
-    axios.get("https://api.jsonbin.io/b/617589c89548541c29c7e082")
-        .then((response) => {
-          this.posts = response.data.posts
-        })
+    axios
+      .get("https://api.jsonbin.io/b/617589c89548541c29c7e082")
+      .then((response) => {
+        this.posts = response.data.posts;
+      });
   },
   methods: {
     increment(id) {
-      console.log("asdasdasd", id, this.$store.state.likes)
-      if (!this.likes[id]) this.likes[id] = 0
-      this.likes[id]++
-      this.$store.state.likes[id] = this.likes[id]
+      console.log("asdasdasd", id, this.$store.state.likes);
+      if (!this.likes[id]) this.likes[id] = 0;
+      this.likes[id]++;
+      this.$store.state.likes[id] = this.likes[id];
     },
     initializeLikes() {
-      this.likes = []
-      this.$store.state.likes = []
-    }
-  }
+      this.likes = [];
+      this.$store.state.likes = [];
+    },
+  },
 };
 </script>
 
@@ -103,7 +111,8 @@ body {
 }
 
 .user {
-  background: url(https://toppng.com/uploads/preview/user-account-management-logo-user-icon-11562867145a56rus2zwu.png) no-repeat;
+  background: url(https://toppng.com/uploads/preview/user-account-management-logo-user-icon-11562867145a56rus2zwu.png)
+    no-repeat;
   background-size: contain;
   border: none;
   width: 80px;
@@ -124,7 +133,8 @@ body {
 }
 
 #like {
-  background: url(https://e7.pngegg.com/pngimages/886/3/png-clipart-white-and-blue-like-icon-facebook-like-button-computer-icons-thumb-signal-thumbs-up-blue-text.png) no-repeat;
+  background: url(https://e7.pngegg.com/pngimages/886/3/png-clipart-white-and-blue-like-icon-facebook-like-button-computer-icons-thumb-signal-thumbs-up-blue-text.png)
+    no-repeat;
   background-size: contain;
   width: 60px;
   height: 50px;
@@ -133,7 +143,9 @@ body {
   border: none;
 }
 
-input, button, p {
+input,
+button,
+p {
   margin: 5px 0;
 }
 
@@ -173,7 +185,6 @@ button {
 button:hover {
   background-color: #e7e7e7;
 }
-
 
 ::selection {
   color: rgb(255, 255, 255);
