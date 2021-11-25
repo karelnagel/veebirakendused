@@ -2,6 +2,7 @@
   <footer>
     <div class="footer-content">
       <p class="head">Find us on</p>
+      <a href="/contact">Contact us</a>
       <ul class="social">
         <li>
           <a href="#" class="facebook" target="_blank" title="Facebook"
@@ -60,6 +61,7 @@ footer {
   line-height: 30px;
   font-size: 30px;
   color: dimgray;
+  justify-content: center;
 }
 .social {
   list-style: none;
