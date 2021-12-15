@@ -21,12 +21,12 @@ div + form {
   cursor: pointer;
   position: relative;
   height: 50px;
+  border: none;
 }
 .dropdown-content {
   display: none;
   position: absolute;
   left: auto;
-  right: 0%;
   border-radius: 7px;
   border: 5px;
   background-color: whitesmoke;
@@ -40,6 +40,9 @@ div + form {
   padding: 10px 10px 10px 10px;
   border-radius: 7px;
   border: 5px;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
 }
 .dropdown-content b:hover {
   background-color: lightgray;
@@ -56,7 +59,6 @@ div + form {
   text-decoration: none;
   padding: 15px 15px;
   font-size: 18px;
-  padding-bottom: 11%;
 }
 .nav-item:hover {
   background-color: lightblue;

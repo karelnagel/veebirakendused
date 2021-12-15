@@ -10,7 +10,7 @@
     <button class="dropdownButton" onclick="showInfo()">
       <img
               id="user-image"
-              src="images/me.png"
+              src="public/assets/images/me.png"
               alt="user"
               height="40"
               display="block"
@@ -22,14 +22,36 @@
     </div>
   </div>
   <div class="navbar">
-    <router-link class="nav-item nav-link" active-class="active" to="/"
-    >Home</router-link
+    <a href="/" class="nav-item nav-link" active-class="active" to="/"
+    >Posts</a
     >
-    <router-link class="nav-item nav-link" active-class="active" to="/contact"
-    >Contact</router-link
+    <a href="/addnewpost" class="nav-item nav-link" active-class="active" to="/addnewpost"
+    >New Post</a
     >
-    <router-link class="nav-item nav-link" active-class="active" to="/login"
-    >Login</router-link
+    <a href="/contact" class="nav-item nav-link" active-class="active" to="/contact"
+    >Contact</a
     >
+<!--
+    <a href="/contact" class="nav-item nav-link" active-class="active" to="/login"
+    >Login</a
+    >
+    -->
   </div>
 </div>
+<script>
+function showInfo() {
+  document.getElementById("dropdownInfo").classList.toggle("show");
+}
+window.onclick = function(event){
+  if(!event.target.matches('.dropdownButton')){
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (let i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if(openDropdown.classList.contains("show")){
+        openDropdown.classList.remove("show")
+      }
+    }
+  }
+}
+</script>
