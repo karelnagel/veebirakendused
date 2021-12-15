@@ -1,5 +1,11 @@
 <%- include ../partials/header -%>
-    <p>one post</p>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <center>Create a new post</center>
+<form action="/" method="POST">
+
+    <label>Title </label>
+    <input type="text" placeholder="title" name="title"><br><br>
+    <label>Body </label>
+    <input type="text" placeholder="body" name="body"><br><br>
+    <button>Submit</button>
+</form>
 <%- include ../partials/footer -%>

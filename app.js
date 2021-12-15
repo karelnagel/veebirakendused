@@ -4,6 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const port_running = 8080;
+
+//pg db setup
+const { Client } = require('pg');
+var connectionString = "postgres://user:password@localhost:5432/database";
+//postgres://user:secret@localhost:5432/mydatabasename
+const client = new Client({
+  connectionString: connectionString
+})
+client.connect();
+
+
 var indexRouter = require('./routes/index');
 
 var app = express();
@@ -37,7 +49,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('404');
 });
-const port_running = 8080;
-app.listen(port_running);
-console.log("App running at: " +"localhost:"+ port_running)
+
+app.set('port', process.env.PORT || port_running);
+app.listen(port_running, function () {
+  console.log("App running at: ","http://localhost:"+ port_running)
+});
+
+
 module.exports = app;

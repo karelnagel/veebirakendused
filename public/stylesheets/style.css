@@ -1,4 +1,16 @@
-
+center{
+  text-align: center;
+  font-family: Arial;
+  font-size: 40px;
+  justify-content: center;
+}
+form{
+  display: inline-block;
+  justify-content: center;
+}
+body{
+  text-align: center;
+}
 .header {
   display: flex;
   flex-direction: row;
