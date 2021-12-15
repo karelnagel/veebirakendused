@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<div class="header">
+  <div class="dropdown">
+    <button class="dropdownButton" onclick="showInfo()">
+      <img
+              id="user-image"
+              src="images/me.png"
+              alt="user"
+              height="40"
+              display="block"
+      />
+    </button>
+    <div class="dropdown-content" id="dropdownInfo">
+      <b>John Doe</b>
+      <b>john.doe@example.com</b>
+    </div>
+  </div>
+  <div class="navbar">
+    <router-link class="nav-item nav-link" active-class="active" to="/"
+    >Home</router-link
+    >
+    <router-link class="nav-item nav-link" active-class="active" to="/contact"
+    >Contact</router-link
+    >
+    <router-link class="nav-item nav-link" active-class="active" to="/login"
+    >Login</router-link
+    >
+  </div>
+</div>
