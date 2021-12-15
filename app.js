@@ -35,9 +35,9 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('404');
 });
-const port_running = 3000;
+const port_running = 8080;
 app.listen(port_running);
 console.log("App running at: " +"localhost:"+ port_running)
 module.exports = app;
